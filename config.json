@@ -1,4 +1,5 @@
 {
   "token": "token",
-  "prefix": "ll "
+  "prefix": "ll ",
+  "permitted_rank_id": "id"
 }

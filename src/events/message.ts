@@ -11,6 +11,14 @@ export default class MessageEvent implements IEvent {
   override(client: any, message: any): void {
     if (message.author.bot) return;
 
+    if (
+      GlobalVars.bot
+        .guilds.get(message.guild.id)
+        .members.get(message.author.id)
+        .roles.get(GlobalVars.config.permitted_rank_id) == undefined
+    )
+      return;
+
     const args = message.content
       .substring(GlobalVars.config.prefix.length)
       .split(" ");

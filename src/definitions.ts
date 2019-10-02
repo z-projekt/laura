@@ -7,6 +7,7 @@ export type Events = IEvent[];
 export interface IConfig {
   token: string;
   prefix: string;
+  permitted_rank_id: string;
 }
 
 export interface ICommand {
