@@ -27,12 +27,11 @@ export default class InfoCommand implements ICommand {
     for (const role of message.guild.members.get(user.id).roles.array())
       user_roles.push(role.name);
 
-    const info_embed = new discord.RichEmbed();
+    const info_embed = new discord.RichEmbed().setColor(0x36393f);
 
     switch (args[1]) {
       case "user":
         info_embed
-          .setColor(0x36393f)
           .setAuthor(user.tag, user.avatarURL)
           .setDescription(`Info about <@${user.id}>`)
           .setThumbnail(user.avatarURL)
@@ -62,7 +61,6 @@ export default class InfoCommand implements ICommand {
 
       case "you":
         info_embed
-          .setColor(0x36393f)
           .setAuthor(GlobalVars.bot.user.tag, GlobalVars.bot.user.avatarURL)
           .setDescription("Info about me.")
           .setThumbnail(GlobalVars.bot.user.avatarURL)

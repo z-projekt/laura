@@ -12,9 +12,8 @@ export default class MessageEvent implements IEvent {
     if (message.author.bot) return;
 
     if (
-      GlobalVars.bot
-        .guilds.get(message.guild.id)
-        .members.get(message.author.id)
+      message.guild.members
+        .get(message.author.id)
         .roles.get(GlobalVars.config.permitted_rank_id) == undefined
     )
       return;
